@@ -1,5 +1,8 @@
+import 'dart:async';
+
 import 'package:flame/game.dart';
 import 'package:flutter/material.dart';
+import 'package:snake_flame_flutter_medium/components/board.dart';
 
 void main() {
   runApp(const MyGame());
@@ -24,6 +27,8 @@ class SnakeGame extends FlameGame {
 
   @override
   Future<void> onLoad() async {
-    return super.onLoad();
+    super.onLoad();
+
+    add(Board(this, boardSize: Vector2(200, 200))); // <- adds the board to the game
   }
 }
